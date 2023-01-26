@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Project Tracker</title>
+    <!-- Boostrap and Jquery links-->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!--Header -->
+    <header class="jumbotron jumbotron-fluid">
+        <h1> project Tracker</h1>
+        <p>Current Time & Date</p>
+        <!--display current date and time using moment.js-->
+        <p></p>
+    </header>
+
+    <main>
+    <!--Boostrap card -->
+    
+
+
+    <!--Boostrap table -->
+    <table class="table ">
+        <thead class="table-primary">
+          <tr>
+            <th scope="col">Project Name</th>
+            <th scope="col">Project type</th>
+            <th scope="col">Hourly rate</th>
+            <th scope="col">Days until Due Date</th>
+            <th scope="col">Potential Total earnings</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- <tr>
+            <th scope="row">1</th>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@mdo</td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@fat</td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td>Larry</td>
+            <td>the Bird</td>
+            <td>@twitter</td>
+          </tr> -->
+        </tbody>
+      </table>
+
+      <!--Modal-->
+      <div class="modal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Add a new Project</h5>
+                </div>
+            
+                <div class="modal-body">
+                    <label for="project-name">Project Name</label>
+                    <input type="text" id="project-name">
+                </div>
+                <div class="modal-body">
+                    <label for="project-type">Project Type</label>
+                    <!--(use a <select> drop-down)-->
+                        <select id="project-type">
+                            <option></option>
+                            <option></option>
+                            <option></option>
+                            <option></option>
+                        </select>
+                </div>
+                <div class="modal-body">
+                    <label for="number">Hourly Rate</label>
+                    <input type="number" min="12.5" max="100">
+                </div>
+                <div class="modal-body">
+                    <label for="datepicker">Due Date</label>
+                    <input type="text" id="datepicker">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary">Add Project</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+
+</html>
