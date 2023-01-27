@@ -10,16 +10,11 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="">
 
-  <script
-      type="text/javascript"
-      src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"
-    ></script>
-    <script
-      src="https://code.jquery.com/jquery-3.5.1.min.js"
-      integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
-      crossorigin="anonymous"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+    integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -46,84 +41,89 @@
                 <li class="list-group-item">Project Name</li>
                 <li class="list-group-item">Project Type</li>
                 <li class="list-group-item">Due Date</li>
-                <li class="list-group-item">Hourley Rate</li>
+                <li class="list-group-item">Hourly Rate</li>
               </ul>
             </div>
-            <a href="#" class="btn btn-primary">Add Project</a>
+            <button type="button" id="project-btn" class="btn btn-primary" data-toggle="modal"
+              data-target="#modalPopUp">Add Project</button>
           </section>
-          </div>
+        </div>
 
 
-          <!--Boostrap table -->
-            <div class="col-8">
-            <table class="table">
-              <thead class="table-primary thead-light table-responsive">
-                <tr>
-                  <th scope="col">Project Name</th>
-                  <th scope="col">Project type</th>
-                  <th scope="col">Hourly rate</th>
-                  <th scope="col">Days until Due Date</th>
-                  <th scope="col">Potential Total earnings</th>
-                </tr>
-              </thead>
-              <tbody>
-              </tbody>
-            </table>
-          </div>
+        <!--Boostrap table -->
+        <div class="col-8">
+          <table class="table">
+            <thead class="table-primary thead-light table-responsive">
+              <tr>
+                <th scope="col">Project Name</th>
+                <th scope="col">Project type</th>
+                <th scope="col">Hourly rate</th>
+                <th scope="col">Days until Due Date</th>
+                <th scope="col">Potential Total earnings</th>
+              </tr>
+            </thead>
+            <tbody>
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   </main>
 
   <!--Modal-->
-  <div class="modal" tabindex="-1">
+  <div class="modal" id="modalPopUp" tabindex="-1">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title">Add a new Project</h5>
+          <h5 class="modal-title">Add a new project</h5>
         </div>
 
         <div class="modal-body">
-          <label for="project-name">Project Name</label>
-          <input type="text" id="project-name">
-        </div>
-        <div class="modal-body">
-          <label for="project-type">Project Type</label>
-          <!--(use a <select> drop-down)-->
-          <select id="project-type">
-            <option>Front End</option>
-            <option>Back End</option>
-            <option>Data Storage</option>
-            <option>Cyber Security</option>
-          </select>
-        </div>
-        <div class="modal-body">
-          <label for="number">Hourly Rate</label>
-          <input type="number" min="12.5" max="100">
-        </div>
-        <div class="modal-body">
-          <label for="datepicker">Due Date</label>
-          <input type="text" id="datepicker">
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-primary">Add Project</button>
-        </div>
-      </div>
-    </div>
-  </div>
+          <form>
+            <div class="form-group">
+              <label for="project-name-input">Project Name</label>
+              <input type="text" class="form-control" id="project-name-input" placeholder="Enter the project's name">
+            </div>
+            <div class="form-group">
+              <label for="project-type">Example select</label>
+              <select class="form-control" id="project-type" >
+                <option>Pick one</option>
+                <option>Front End</option>
+                <option>Back End</option>
+                <option>Full Stack</option>
+                <option>Cyber Security</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="hourly-rate-input">Hourly Rate (£)</label>
+              <input type="number" class="form-control" id="hourly-rate-inpu" placeholder="£">
+            </div>
+            <div class="form-group">
+              <label for="datepicker">Due Date</label>
+              <input type="date" class="form-control" id="datepicker" placeholder="When is the project due?" rows="3"></input>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary">Save Project</button>
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </form>
 
-  <!--Add links to jquery, boostrap... (as per boostrap website)-->
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
-    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
-    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-    crossorigin="anonymous"></script>
+        </div>
+
+        <!--Add links to jquery, boostrap... (as per boostrap website)-->
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+          integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+          crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+          integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+          crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+          integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+          crossorigin="anonymous"></script>
 
 
-  <script src="./assets/Js/script.js"></script>
+        <script src="./assets/Js/script.js"></script>
 </body>
 
 </html>
