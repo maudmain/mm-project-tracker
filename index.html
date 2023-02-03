@@ -100,9 +100,9 @@
               <label for="hourly-rate-input">Hourly Rate (£)</label>
               <input type="number" class="form-control" id="hourly-rate-input" placeholder="£">
             </div>
-            <div class="form-group">
-              <label for="datepicker">Due Date</label>
-              <input type="date" class="form-control" id="datepicker" placeholder="When is the project due?" rows="3"></input>
+            <label for="due-date-input">Due Date</label>
+              <input type="text" min='1' id="due-date-input" class="form-control" placeholder="When is the project due?"
+                required />
             </div>
             <div class="modal-footer">
               <button type="submit" id="save-btn" class="btn btn-primary">Save Project</button>
